@@ -5,7 +5,7 @@
 		}
 	],
 	"settings": {
-		"files.exclude": {
+			"files.exclude": {
 			"**/.git": false
 	   }	
 	},
@@ -14,5 +14,4 @@
 			"ms-dotnettools.csharp"
 		]
 	},
-
 }
