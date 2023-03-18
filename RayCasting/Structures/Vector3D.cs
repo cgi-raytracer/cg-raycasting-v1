@@ -19,7 +19,7 @@ public class Vector3D:I3DSpaceplacable
         return (float)Math.Sqrt(X * X + Y * Y + Z * Z);
     }
 
-    public void Normalize()
+    public Vector3D Normalize()
     {
         if (AbsoluteValue != 1)
         {
@@ -28,6 +28,8 @@ public class Vector3D:I3DSpaceplacable
             Z /= AbsoluteValue;
             AbsoluteValue = 1;
         }
+
+        return this;
     }
 
     public bool IsNormalized()
