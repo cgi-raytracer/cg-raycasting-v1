@@ -44,6 +44,12 @@ public class Vector3D:I3DSpaceplacable
     public float DotProductWith(Vector3D other) => 
     this.X * other.X + this.Y * other.Y + this.Z * other.Z;
 
+    public float CosineWith(Vector3D other) => 
+    DotProductWith(other) / (this.AbsoluteValue * other.AbsoluteValue);
+
+    //in radians
+    public float AngleWith(Vector3D other) =>
+    (float)Math.Acos(CosineWith(other));
 
     public Vector3D Scale (int scaleBy) => 
     new Vector3D(this.X*scaleBy, this.Y*scaleBy, this.Z*scaleBy);
