@@ -1,13 +1,25 @@
 public class ScreenWithPoints : IScreen<Point3D>
 {
-    public int Width {get; private set;}
-    public int Height {get; private set;}
+    public float Width {get; private set;}
+    public float Height {get; private set;}
+    public int NumberOfPixelsByWidth {get; private set;}
+    public int NumberOfPixelsByHeight {get; private set;}
     public Point3D[,] InformationPixels {get; private set;}
+    public ICamera AttachedCamera {get; private set;}
+   
 
-    public ScreenWithPoints(int width, int height)
+    public ScreenWithPoints(int numberOfPixelsByWidth, int numberOfPixelsByHeight, ICamera attachedCamera)
     {
-        this.Width = width;
-        this.Height = height;
-        this.InformationPixels = new Point3D[Width,Height];
+        this.NumberOfPixelsByWidth = numberOfPixelsByWidth;
+        this.NumberOfPixelsByHeight = numberOfPixelsByHeight;
+
+        this.InformationPixels = new Point3D[numberOfPixelsByWidth, numberOfPixelsByHeight];
+
+        this.AttachedCamera = attachedCamera;
+
+        this.Width = (float)attachedCamera.GetScreenWidth();
+        this.Height = (float)attachedCamera.GetScreenHeight();
     }
+
+
 }
