@@ -29,7 +29,7 @@ public class ScreenWithPoints : IScreen<Point3D>
         {
             for (int row = 0; row < InformationPixels.GetLength(1); row++) 
             {
-                Point3D point = caster.GetPixelAtPosition(column, row);
+                Point3D point = caster.GetPixelValueAtPosition(column, row);
 
                 InformationPixels[column,row] = point;
             }
