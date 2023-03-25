@@ -1,4 +1,4 @@
-public class FixedCamera3D
+public class FixedCamera3D : ICamera
 {
     public Point3D Position {get; private set;}
     public Vector3D Direction {get; private set;} //always normalized through constructor
@@ -23,12 +23,6 @@ public class FixedCamera3D
     //     this.FieldOfView = fieldOfView;
     //     this.DistanceToScreen = distanceToScreen;
     // }
-
-    public IScreen<Point3D>? Wow()
-    {   
-        IScreen<Point3D>? de = null;
-        return de;
-    }
 
     public double GetScreenWidth()
     {
