@@ -14,6 +14,13 @@ public class Vector3D:I3DSpaceplacable
         AbsoluteValue = CalculateAbsoluteValue();
     }
 
+    public Vector3D (Point3D from, Point3D to)
+    {
+        this.X = to.X - from.X;
+        this.Y = to.Y - from.Y;;
+        this.Z = to.Z - from.Z;;
+        AbsoluteValue = CalculateAbsoluteValue();
+    }
 
     private float CalculateAbsoluteValue() => 
     (float)Math.Sqrt(X * X + Y * Y + Z * Z);
