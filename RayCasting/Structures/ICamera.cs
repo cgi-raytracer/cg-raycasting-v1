@@ -7,4 +7,6 @@ public interface ICamera
 
     public double GetScreenWidth();
     public double GetScreenHeight();
+
+    public (Point3D, Point3D, Point3D, Point3D) GetScreenCorners();
 }

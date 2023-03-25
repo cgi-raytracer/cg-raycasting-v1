@@ -7,8 +7,9 @@ public class ScreenWithPoints : IScreen<Point3D>
     public int NumberOfPixelsByWidth {get; private set;}
     public int NumberOfPixelsByHeight {get; private set;}
     public Point3D[,] InformationPixels {get; private set;}
+    public (I3DSpaceplacable, I3DSpaceplacable, I3DSpaceplacable, I3DSpaceplacable) Corners {get; private set;}
     public ICamera _attachedCamera {get; private set;}
-   
+
 
     public ScreenWithPoints(int numberOfPixelsByWidth, int numberOfPixelsByHeight, ICamera attachedCamera)
     {
@@ -21,6 +22,8 @@ public class ScreenWithPoints : IScreen<Point3D>
 
         this.Width = (float)_attachedCamera.GetScreenWidth();
         this.Height = (float)_attachedCamera.GetScreenHeight();
+
+        this.Corners = _attachedCamera.GetScreenCorners();
     }
 
     public void FillWithPixels(ICasting<Point3D> caster)
@@ -29,10 +32,15 @@ public class ScreenWithPoints : IScreen<Point3D>
         {
             for (int row = 0; row < InformationPixels.GetLength(1); row++) 
             {
-                Point3D point = caster.GetPixelValueAtPosition(column, row);
+                Point3D point = caster.EvaluatePixelAtPosition(column, row);
 
                 InformationPixels[column,row] = point;
             }
         } 
+    }
+
+    public Point3D EvaluatePixelValue(ICasting<Point3D> caster, int column, int row)
+    {
+        return caster.EvaluatePixelAtPosition(column, row);
     }
 }

@@ -6,6 +6,6 @@ public interface IScreen<T>
     public int NumberOfPixelsByHeight {get;}
     public T[,] InformationPixels {get;}
     public ICamera _attachedCamera {get;}
-
+    public (I3DSpaceplacable, I3DSpaceplacable, I3DSpaceplacable, I3DSpaceplacable) Corners {get;}
     public void FillWithPixels(ICasting<T> caster);
 }
