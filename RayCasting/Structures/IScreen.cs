@@ -5,5 +5,7 @@ public interface IScreen<T>
     public int NumberOfPixelsByWidth {get;}
     public int NumberOfPixelsByHeight {get;}
     public T[,] InformationPixels {get;}
-    public ICamera AttachedCamera {get;}
+    public ICamera _attachedCamera {get;}
+
+    public void FillWithPixels(ICasting<T> caster);
 }
