@@ -51,6 +51,11 @@ public class Vector3D:I3DSpaceplacable
     public float AngleWith(Vector3D other) =>
     (float)Math.Acos(CosineWith(other));
 
-    public Vector3D Scale (int scaleBy) => 
+    public Vector3D Scale (float scaleBy) => 
     new Vector3D(this.X*scaleBy, this.Y*scaleBy, this.Z*scaleBy);
+
+    public override string ToString()
+    {
+        return $"{X}, {Y}, {Z}";
+    }
 }

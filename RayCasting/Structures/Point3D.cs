@@ -36,4 +36,9 @@ public class Point3D:I3DSpaceplacable
     // {
     //     return new Vector3D(vector.X-point.X, vector.Y-point.Y, vector.Z-point.Z);
     // }
+
+    public override string ToString()
+    {
+        return $"{X}, {Y}, {Z}";
+    }
 }
