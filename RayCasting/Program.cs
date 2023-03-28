@@ -2,7 +2,7 @@
 {
     private static void Main(string[] args)
     {
-        int fieldOfView = 90;
+        int fieldOfView = 60;
         int numberOfPixels = 80;
         float distanceToScreen = 1;
         Ray3D light = new Ray3D(new Point3D(1, -2, 0), new Vector3D(-1, -2, 1));
@@ -15,9 +15,11 @@
 
         ScreenWithBools screen2 = new ScreenWithBools(numberOfPixels, numberOfPixels, webcam);
 
-        ITracable[] figures = new ITracable[1];
-        figures[0] = new Sphere(new Point3D((float)1.7, 0, 0), (float)1);
-        //figures[0] = new Sphere(new Point3D(3, -1, 0), (float)1);
+        // ! distance from a closest figure point to the camera should be more then
+        // from camera to the screen   
+        ITracable[] figures = new ITracable[2];
+        figures[0] = new Sphere(new Point3D((float)3.7, 0, 0), (float)1.2);
+        figures[1] = new Sphere(new Point3D((float)4, -1, 0), (float)1.2);
         //figures[1] = new Sphere(new Point3D(3, 1, 0), (float)1);
        
 

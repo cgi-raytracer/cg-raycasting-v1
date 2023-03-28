@@ -19,20 +19,25 @@ public class CastWithLuminosityValues : ICasting<float>
 
     public float EvaluatePixelAtPosition(int column, int row)
     {
+
         Point3D position = _attachedScreen._attachedCamera.Position;
         Point3D pixel = _screenToRead.InformationPixels[column, row];
         List<(Ray3D, float)> figureNormals = new List<(Ray3D, float)>();
         foreach(var figure in _figures)
+        {        
+            if(column == 10 && row == 8)
         {
+            int breakpoint;
+        }
             Ray3D? normal = figure.GetNormalAtPointWith(new Ray3D(position, new Vector3D(pixel.X, pixel.Y, pixel.Z)));
             if(normal is not null)
             {
-                figureNormals.Add((normal, normal.Position.GetDistance(pixel)));
+                figureNormals.Add((normal, pixel.GetDistance(normal.Position)));
             }
         }
         figureNormals.Sort((x, y) => y.Item2.CompareTo(x.Item2));
         if (figureNormals.Count > 0) {
-            return figureNormals.First<(Ray3D, float)>().Item1.Direction.DotProductWith(lightSource.Direction);
+            return figureNormals.Last<(Ray3D, float)>().Item1.Direction.DotProductWith(lightSource.Direction);
         }
         return 0;
     }
