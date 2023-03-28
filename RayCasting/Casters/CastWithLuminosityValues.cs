@@ -21,13 +21,16 @@ public class CastWithLuminosityValues : ICasting<float>
     {
         Point3D position = _attachedScreen._attachedCamera.Position;
         Point3D pixel = _screenToRead.InformationPixels[column, row];
+        List<float> figurePixelDistances = new List<float>();
         foreach(var figure in _figures)
         {
             Ray3D? normal = figure.GetNormalAtPointWith(new Ray3D(position, new Vector3D(pixel.X, pixel.Y, pixel.Z)));
             if(normal is not null)
             {
+                figurePixelDistances.Add(normal.Position.GetDistance(pixel));
                 return normal.Direction.DotProductWith(lightSource.Direction);
             }
+            return figurePixelDistances.Min();
         }
         return 0;    
     }
