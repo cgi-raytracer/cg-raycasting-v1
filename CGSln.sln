@@ -3,20 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayCasting", "RayCasting\RayCasting.csproj", "{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RayCasting", "RayCasting\RayCasting.csproj", "{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayCastingTests", "RayCastingTests\RayCastingTests.csproj", "{CA205322-E06B-4CB2-8EF7-44323B6473D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAE1F1FA-0A17-4DB7-8DBD-D0C97045126E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA205322-E06B-4CB2-8EF7-44323B6473D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA205322-E06B-4CB2-8EF7-44323B6473D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA205322-E06B-4CB2-8EF7-44323B6473D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA205322-E06B-4CB2-8EF7-44323B6473D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0A8C862-9910-4322-BCDE-D653C7ABBE2F}
 	EndGlobalSection
 EndGlobal
