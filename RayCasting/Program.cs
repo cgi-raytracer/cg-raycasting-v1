@@ -3,8 +3,8 @@
     private static void Main(string[] args)
     {
         int fieldOfView = 60;
-        int numberOfPixels = 80;
-        float distanceToScreen = 1;
+        int numberOfPixels = 100;
+        float distanceToScreen = 10;
         Ray3D light = new Ray3D(new Point3D(1, -2, 0), new Vector3D(-1, -2, 1));
 
         FixedCamera3D webcam = new FixedCamera3D(fieldOfView, distanceToScreen);
@@ -17,11 +17,13 @@
 
         // ! distance from a closest figure point to the camera should be more then
         // from camera to the screen   
-        ITracable[] figures = new ITracable[2];
-        figures[0] = new Sphere(new Point3D((float)3.7, 0, 0), (float)1.2);
-        figures[1] = new Sphere(new Point3D((float)4, -1, 0), (float)1.2);
+        ITracable[] figures = new ITracable[1];
+        //figures[0] = new Sphere(new Point3D((float)3.7, 0, 0), (float)1.2);
+        //figures[1] = new Sphere(new Point3D((float)4, -1, 0), (float)1.2);
+
+        figures[0] = new Disk(new Point3D(1, 0, 0), 0.95f, new Ray3D(new(1, 0, 0), new(1, 2, 0)));
         //figures[1] = new Sphere(new Point3D(3, 1, 0), (float)1);
-       
+
 
         screen2.FillWithPixels(new CastWithBoolsIntersections(screen1, screen2, figures));
 
